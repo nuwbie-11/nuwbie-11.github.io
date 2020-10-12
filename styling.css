@@ -58,7 +58,7 @@ input[type="checkbox"]{
   display: none;
 }
 @media (max-width: 1280px){
-  .kontainer{
+  .kontainer, .kontainer2{
     padding: 0 250px 0 0px;
   }
 }
@@ -66,9 +66,9 @@ input[type="checkbox"]{
   nav{
     padding: 0 40px 0 50px;
   }
-  .kontainer{
-    padding: 0 200px 0 0px;
-    width:100%;
+  .kontainer, .kontainer2{
+    padding: 0px 100px 100px 0px;
+    height:50%;
   }
 }
 @media (max-width: 920px) {
@@ -77,6 +77,14 @@ input[type="checkbox"]{
   }
   #check:checked ~ .menu-btn i:before{
     content: "\f00d";
+  }
+  .kontainer .kontak_isi, .kontainer2 .kontak_isi{
+    margin: 10 0px;
+    text-align: center;
+    top:50px;
+  }
+  .kontainer, .kontainer2{
+    position:inherit;
   }
   nav ul{
     position: absolute;
@@ -271,14 +279,125 @@ input[type="checkbox"]{
 
 
 .kontak_container{
-  padding-top: 8%;
   background-color: rgb(224, 224, 224);
 }
 
 .kontak-detail{
-  padding-left: 10%;
-  padding-bottom: 3%
+  padding-bottom: 1%
 }
+
+
+
+.kontainer{
+  height: 60%;
+  width: 50%;
+  background: url('mulungin/kelly.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  transition: 0.3s ease-out;
+  float:left;
+}
+.kontainer2{
+  height: 60%;
+  width: 50%;
+  overflow: hidden;
+  background: url('mulungin/danial.jpg') no-repeat;
+  background-size: cover;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  transition: 0.3s ease-out;
+}
+.kontainer:hover, .kontainer2:hover{
+  box-shadow: 0px 1px 35px 0px rgba(0,0,0,0.3);
+  transform: translateY(0px);
+}
+
+.kontainer:hover .image, .kontainer2:hover .image{
+  transform: translateY(0px);
+}
+.kontainer:hover .image img,.kontainer2:hover .image img{
+  opacity: 0.2;
+}
+
+.kontainer ul,.kontainer2 ul{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    list-style: none;
+}
+
+.kontainer ul li,.kontainer2 ul li{
+  margin: 0px 5px;
+}
+
+.kontainer ul li a, .kontainer2 ul li a{
+  display: block;
+  height: 30px;
+  width: 30px;
+  color: #000;
+  line-height: 50px;
+  font-size: 25px;
+  border-radius: 40%;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  float: right;
+}
+
+
+.kontainer:hover > ul > li > a,
+.kontainer2:hover > ul > li > a
+{
+  opacity: 1;
+  transform: translateY(0);
+}
+.kontainer:hover > ul > li:nth-child(2) a,
+.kontainer2:hover > ul > li:nth-child(2) a
+{
+  transition-delay: 0.1s;
+}
+.kontainer:hover > ul > li:nth-child(3) a,
+.kontainer2:hover > ul > li:nth-child(3) a
+{
+  transition-delay: 0.2s;
+}
+.kontainer:hover > ul > li:nth-child(4) a,
+.kontainer2:hover > ul > li:nth-child(4) a
+
+{
+  transition-delay: 0.3s;
+}
+.kontainer:hover > ul > li:nth-child(5) a,
+.kontainer2:hover > ul > li:nth-child(5) a
+{
+  transition-delay: 0.4s;
+}
+.kontainer .kontak_isi, .kontainer2 .kontak_isi{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.info{
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+  color: #000;
+  line-height: 26px;
+}
+
+
+.info h2{
+  font-size: 27px;
+  margin: 10px 0;
+}
+.info span{
+  color: #1a1a1a;
+}
+
 
 .fa-facebook {
 	color: #3b5998;
@@ -286,15 +405,18 @@ input[type="checkbox"]{
 .fa-facebook:hover {
 	color: #4f79d0;
 }
-
-
 .fa-instagram {
-	color: #f35588;
+	color: #8a3ab9;
 }
 .fa-instagram:hover {
-	color: #d5d5d5;
+	color: #ae48eb;
 }
-
+.fa-github {
+	color: #211f1f;
+}
+.fa-github:hover {
+	color: #ac9c9c;
+}
 .fa-whatsapp {
 	color: #075e54;
 }
@@ -308,115 +430,4 @@ input[type="checkbox"]{
 }
 .fa-twitter:hover {
 	color: #00ddee;
-}
-
-
-.kontainer{
-  position: relative;
-  height: 25%;
-  width: 15%;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
-  transition: 0.3s ease-out;
-}
-.kontainer:hover{
-  box-shadow: 0px 1px 35px 0px rgba(0,0,0,0.3);
-}
-
-.kontainer .image{
-  position:relative;
-  top: 0%;
-  left: -4%;
-  height: 100px;
-  width: 100px;
-  z-index: 2;
-  transition: transform 0.3s ease-out;
-}
-
-.kontainer:hover .image{
-  transform: translateY(0px);
-}
-.image{
-  height: 100%;
-  width: 100%;
-  transition: opacity 0.5s;
-}
-.kontainer:hover .image{
-  opacity: 0.2;
-}
-
-.kontainer ul{
-  display: flex;
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  list-style: none;
-}
-
-.kontainer ul li{
-  margin: 0 3.8px;
-}
-
-.kontainer ul{
-  left: 50%;
-}
-
-.kontainer li a{
-  padding-left: 1%;
-}
-
-.kontainer ul li a{
-  display: block;
-  height: 30px;
-  width: 30px;
-  color: #000;
-  line-height: 20px;
-  align-items: center;
-  font-size: 25px;
-  border-radius: 40%;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-
-.kontainer:hover > ul > li > a{
-  opacity: 1;
-  transform: translateY(0);
-}
-.kontainer:hover > ul > li:nth-child(2) a{
-  transition-delay: 0.1s;
-}
-.kontainer:hover > ul > li:nth-child(3) a{
-  transition-delay: 0.2s;
-}
-.kontainer:hover > ul > li:nth-child(4) a{
-  transition-delay: 0.3s;
-}
-.kontainer:hover > ul > li:nth-child(5) a{
-  transition-delay: 0.4s;
-}
-.kontainer .content{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-}
-.info{
-  position: absolute;
-  bottom: 20px;
-  text-align: center;
-  width: 100%;
-  color: #000;
-  line-height: 26px;
-}
-.info h2{
-  font-size: 27px;
-  margin: 3px 0;
-}
-.info span{
-  color: #1a1a1a;
 }
